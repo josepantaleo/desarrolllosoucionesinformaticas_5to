@@ -1,0 +1,428 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistemas Digitales - Resumen Clase 1</title>
+    <style>
+      /* Estilos optimizados para modernizar el diseño */
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e67e22;
+        --bg: #f4f7f6;
+        --text: #333;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      }
+
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background-color: var(--bg);
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: var(--primary);
+        color: var(--white);
+        padding: 3rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+      }
+      header p {
+        margin: 8px 0 0;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      .contenedor {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      section {
+        background: var(--white);
+        margin-bottom: 30px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+      }
+
+      h2 {
+        color: var(--primary);
+        border-left: 6px solid var(--secondary);
+        padding-left: 15px;
+        margin-top: 0;
+        font-size: 1.6rem;
+      }
+
+      h3 {
+        color: var(--secondary);
+        margin-top: 25px;
+      }
+
+      .resumen {
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 18px;
+        border-radius: 10px;
+        border-left: 5px solid #4caf50;
+        font-weight: 600;
+        margin: 20px 0;
+      }
+
+      .ejemplo {
+        background: #fff9c4;
+        color: #5d4037;
+        padding: 18px;
+        border-radius: 10px;
+        border: 1px solid #ffe082;
+        font-family: "Consolas", "Monaco", monospace;
+        margin: 20px 0;
+      }
+
+      .tip {
+        background: #e3f2fd;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--secondary);
+        margin: 15px 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .columnas {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .columna {
+        flex: 1;
+        min-width: 280px;
+        background: #fcfcfc;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+      }
+
+      th,
+      td {
+        border: 1px solid #edf2f7;
+        padding: 14px;
+        text-align: left;
+      }
+
+      th {
+        background: var(--secondary);
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+
+      .container {
+        border: 1px solid #e2e8f0;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      code {
+        display: block;
+        background: #1e1e1e;
+        color: #dcdcdc;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-family: "Consolas", monospace;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        word-spacing: 10px;
+        white-space: pre-wrap; /* Mantiene el formato pero permite saltos si es necesario */
+      }
+
+      footer {
+        text-align: center;
+        padding: 3rem;
+        color: #94a3b8;
+        font-size: 0.95rem;
+      }
+
+      a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
+      a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+
+      /* Ajustes para checkboxes en la actividad */
+      ul {
+        list-style-type: none;
+        padding-left: 10px;
+      }
+      ul li {
+        margin-bottom: 8px;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.5rem;
+        }
+        section {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>IPEM 146 - Desarrollo de Soluciones Informáticas</h1>
+      <p>5TO A Tarde - Informática</p>
+      <p>Prof. J. Pantaleo</p>
+    </header>
+
+    <div classr="contrenedor">
+     
+    <section id="instalacion">
+        <header>
+            <p><em>Software de Programación: Visual Studio Code</em></p>
+            <h1>Guía de Instalación para Windows</h1>
+        </header>
+
+        <h2>1. Obtener el archivo</h2>
+        <p>
+            Entra en la web oficial:
+            <a href="https://code.visualstudio.com/">code.visualstudio.com</a>.
+        </p>
+        <p>
+            Haz clic en el botón azul <strong>"Download for Windows"</strong>. Se
+            descargará el instalador (ej. <em>VSCodeUserSetup-x64.exe</em>).
+        </p>
+
+        <hr />
+
+        <h3>2. Ejecución y Configuración (Paso Crítico)</h3>
+        <p>
+            Inicia el instalador. Durante el proceso, presta atención a la
+            <strong>Selección de tareas adicionales</strong>. Es fundamental
+            marcar todas las casillas:
+        </p>
+        <ul>
+            <li>[x] Crear un acceso directo en el escritorio.</li>
+            <strong>
+            <li>[x] Agregar la acción "Abrir con Code" al menú contextual de archivos.</li>
+            </strong>
+            <li>[x] Registrar Code como editor para tipos de archivo admitidos.</li>
+          
+        </ul>
+
+        <p>Finalmente, haz clic en <strong>Instalar</strong> y luego en <strong>Finalizar</strong>.</p>
+    </section>
+
+    <hr />
+
+    <section id="configuracion">
+        <h1>Configuración y Extensiones Web (HTML & CSS)</h1>
+        <p>Ajustes esenciales para trabajar con diseño web de forma eficiente.</p>
+
+        <h2>1. El "Auto-Guardado"</h2>
+        <p>Para no perder cambios ni olvidar guardar manualmente:</p>
+        <ul>
+            <li>Ve a <strong>Archivo &gt; Autoguardado</strong>.</li>
+        </ul>
+
+        <article id="productividad-visual">
+            <h3>Productividad Visual</h3>
+            <li>Busca en extensiones (<code>Ctrl + Shift + X</code></li>
+            <ul>
+                <li><strong>Live Server:</strong> Actualización automática del navegador al guardar.</li>
+                <li><strong>Color Highlight:</strong> Visualización de colores directamente en el código CSS.</li>
+                <li><strong>CSS Peek:</strong> Acceso rápido a los estilos desde el archivo HTML usando <code>Ctrl + Clic</code>.</li>
+            </ul>
+        </article>
+
+        <article id="escritura-orden">
+            <h3>Escritura y Orden</h3>
+            <ul>
+                <li><strong>Auto Rename Tag:</strong> Sincronización automática de etiquetas de apertura y cierre.</li>
+                <li><strong>Prettier:</strong> Formateador automático de código (<code>Shift + Alt + F</code>).</li>
+                <li><strong>IntelliSense for CSS:</strong> Autocompletado inteligente de clases CSS en HTML.</li>
+            </ul>
+        </article>
+        
+        <p><em>Consejo: Mantén instaladas solo las que uses para que VS Code siga siendo rápido.</em></p>
+    </section>
+
+    <hr />
+
+    <section id="personalizacion">
+        <h1>Personalización: Idioma, Temas e Iconos</h1>
+
+        <h2>1. Cambiar el idioma a Español</h2>
+        <ol>
+            <li>Busca en extensiones (<code>Ctrl + Shift + X</code>): <strong>"Spanish Language Pack"</strong>.</li>
+            <li>Instala y selecciona <strong>"Change Language and Restart"</strong> en el aviso emergente.</li>
+        </ol>
+
+        <h2>2. Temas y Estética</h2>
+        <ul>
+            <li><strong>Colores:</strong> Presiona <code>Ctrl + K + T</code> para elegir un tema visual.</li>
+            <li><strong>Iconos:</strong> Instala la extensión <strong>"Material Icon Theme"</strong> para identificar archivos visualmente.</li>
+        </ul>
+
+      
+    </section>
+
+    <hr />
+
+    <section id="atajos-vscode">
+        <h1>Guía Rápida de Atajos y Trucos</h1>
+        <p>Domina el teclado para programar con la velocidad de un profesional.</p>
+<h1>⚡ ATAJOS COMPLETOS VS CODE</h1>
+
+<h2>📁 ARCHIVOS Y CARPETAS (PROYECTOS)</h2>
+<div class="box">
+
+  <p><span class="key">Ctrl + K</span> → <span class="key">Ctrl + O</span> → 📂 Abrir carpeta</p>
+  <p><span class="key">Ctrl + P</span> → Abrir archivo rápidamente</p>
+  <p><span class="key">Ctrl + O</span> → Abrir archivo</p>
+  <p><span class="key">Ctrl + Shift + N</span> → Nueva ventana de VS Code</p>
+  <p><span class="key">Ctrl + W</span> → Cerrar archivo</p>
+  <p><span class="key">Ctrl + K</span> → <span class="key">F</span> → Cerrar carpeta</p>
+</div>
+
+
+<h2>📂 EXPLORADOR Y NAVEGACIÓN</h2>
+<div class="box">
+  <p><span class="key">Ctrl + Shift + E</span> → Explorador de archivos</p>
+  <p><span class="key">Ctrl + B</span> → Mostrar/ocultar barra lateral</p>
+  <p><span class="key">Ctrl + Shift + F</span> → Buscar en todo el proyecto</p>
+  <p><span class="key">Ctrl + Shift + G</span> → Control de versiones (Git)</p>
+  <p><span class="key">Ctrl + Shift + D</span> → Panel de depuración</p>
+  <p><span class="key">Ctrl + Shift + X</span> → Extensiones</p>
+</div>
+
+<h2>✍️ EDICIÓN BÁSICA</h2>
+<div class="box">
+  <p><span class="key">Ctrl + X</span> → Cortar línea</p>
+  <p><span class="key">Ctrl + C</span> → Copiar línea</p>
+  <p><span class="key">Ctrl + V</span> → Pegar</p>
+  <p><span class="key">Ctrl + Z</span> → Deshacer</p>
+  <p><span class="key">Ctrl + Y</span> → Rehacer</p>
+  <p><span class="key">Ctrl + Enter</span> → Nueva línea abajo</p>
+  <p><span class="key">Ctrl + Shift + Enter</span> → Nueva línea arriba</p>
+</div>
+
+<h2>🧠 EDICIÓN AVANZADA (MAGIA REAL)</h2>
+
+<h3>🖱️ Multicursor</h3>
+<div class="box">
+  <p><span class="key">Alt + Clic</span> → Cursor múltiple</p>
+  <p><span class="key">Ctrl + Alt + ↑ / ↓</span> → Agregar cursores</p>
+  <p><span class="key">Ctrl + Shift + L</span> → Seleccionar todas las coincidencias</p>
+</div>
+
+<h3>🔎 Selección inteligente</h3>
+<div class="box">
+  <p><span class="key">Ctrl + D</span> → Siguiente coincidencia</p>
+  <p><span class="key">Ctrl + U</span> → Deshacer selección</p>
+  <p><span class="key">Ctrl + Shift + → / ←</span> → Selección por palabras</p>
+  <p><span class="key">Ctrl + Shift + K</span> → Borrar línea</p>
+</div>
+
+<h3>📋 Duplicar y mover</h3>
+<div class="box">
+  <p><span class="key">Shift + Alt + ↓ / ↑</span> → Duplicar línea</p>
+  <p><span class="key">Alt + ↓ / ↑</span> → Mover línea</p>
+  <p><span class="key">Shift + Alt + Drag</span> → Copiar bloque</p>
+</div>
+
+<div class="box">
+  <p><span class="key">Ctrl + F</span> → Buscar</p>
+  <p><span class="key">Ctrl + H</span> → Reemplazar</p>
+  <p><span class="key">F3 / Shift + F3</span> → Siguiente / anterior</p>
+  <p><span class="key">Alt + Enter</span> → Seleccionar todas</p>
+</div>
+
+<h2>🧹 FORMATO Y ORDEN</h2>
+<div class="box">
+  <p><span class="key">Shift + Alt + F</span> → Formatear código</p>
+  <p><span class="key">Alt + Z</span> → Ajuste de línea</p>
+  <p><span class="key">Ctrl + /</span> → Comentar línea</p>
+ 
+</div>
+
+<h2>🧘 VISTA Y PRODUCTIVIDAD</h2>
+<div class="box">
+  <p><span class="key">Ctrl + K → Z</span> → Modo Zen</p>
+  <p><span class="key">Ctrl + + / Ctrl + -</span> → Zoom</p>
+  <p><span class="key">Ctrl + 0</span> → Reset zoom</p>
+  <p><span class="key">F11</span> → Pantalla completa</p>
+  <p><span class="key">!</span> → Estructura básica html</p>
+</div>
+<div class="box">
+  <h2>Ejercicio</h2>
+
+  <ol>
+    <li>Crea una carpeta en “Mis documentos”.</li>
+    <li>Abre Visual Studio Code.</li>
+    <li>Abre la carpeta que creaste.</li>
+    <li>Crea dos archivos: <strong>index.html</strong> y <strong>styles.css</strong>.</li>
+    <li>Escribe el código correspondiente en cada archivo.</li>
+  </ol>
+
+  <section>
+    <h3>Archivo HTML</h3>
+    <img src="vs_ejercicio_html.jpg" alt="Código HTML del ejercicio en Visual Studio Code">
+  </section>
+
+  <section>
+    <h3>Archivo CSS</h3>
+    <img src="vs_ejercicio_css.jpg" alt="Código CSS del ejercicio en Visual Studio Code">
+  </section>
+</div>
+    </section>
+    </div>
+
+
+    <footer>
+      <p>NORMAL 146 - Sistemas Digitales | Clase 1 y 2 | 2026</p>
+    </footer>
+  </body>
+</html>
